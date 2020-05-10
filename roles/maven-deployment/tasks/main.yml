@@ -1,0 +1,14 @@
+    - name: "Deployment: Retreive and Deploy Application Artifact"
+      maven_artifact:
+        group_id: "{{ groupid }}"
+        artifact_id: "{{ artifactid }}"
+        version: "{{ version }}"
+        repository_url: "{{ nexus_url }}/repository/maven-public/"
+        dest: "{{ springboot_deploy_folder }}"
+        extension: "jar"
+        state: "present"
+        timeout: 10
+        verify_checksum: always
+        mode: 0644
+        owner: "{{ ansible_user_id }}"
+      become: yes

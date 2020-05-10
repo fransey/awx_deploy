@@ -1,0 +1,19 @@
+    - name: "Health Check: Waiting for {{ artifactid }} to be ready"
+      wait_for:
+        port: "{{ application_port }}"
+        host: "{{ deployment_host }}"
+        connect_timeout: 3
+        delay: 3
+        timeout: "{{ startup_timeout }}"
+        
+    - name: "Health Check: Querying {{ artifactid }} actuator health endpoint"
+      uri:
+        url: "http://{{ deployment_host }}:{{ application_port }}/actuator/health"
+        method: GET
+        return_content: yes
+        status_code: 200
+        body_format: json
+      register: result
+      until: result.json.status == "UP"
+      retries: 5
+      delay: 3

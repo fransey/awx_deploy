@@ -19,7 +19,3 @@
         state: directory
         owner: root
         group: root
-       debug: 
-       var: {{ ansible_user_id }}
-
- 

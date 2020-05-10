@@ -11,7 +11,7 @@
         owner: "{{ springboot_user }}"
         group: "{{ springboot_group }}"
       when: deployment_directory.stat.exists == false
-      become: yes
+
 
     - name: "Pre Deployment Checks: Ensure systemd system directory is present"
       file:
@@ -22,4 +22,4 @@
 
     - name: "Pre Deployment Checks: Deployment: Backing up {{ artifactid }} systemd script"
       command: cp "{{ sysd_script }}" "{{ sysd_script }}.bak"
-      become: yes
+   

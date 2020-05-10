@@ -1,6 +1,6 @@
 - name: "Java Spring Boot Application Deployment"
   hosts: "{{ deployment_host }}"
-  connection: ssh
+  connection: local
 
   roles:
     - "{{ role }}"

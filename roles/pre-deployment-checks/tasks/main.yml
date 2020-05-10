@@ -13,7 +13,7 @@
       when: deployment_directory.stat.exists == false
 
 
-    - name: "Pre Deployment Checks: Ensure systemd system directory is {{ ansible_user_id }} present"
+    - name: "Pre Deployment Checks: Ensure systemd system directory is present"
       file:
         path: "{{ sysd_user_services_folder }}"
         state: directory

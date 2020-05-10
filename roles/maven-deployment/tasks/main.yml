@@ -3,7 +3,7 @@
         group_id: "{{ groupid }}"
         artifact_id: "{{ artifactid }}"
         version: "{{ version }}"
-        repository_url: "{{ nexus_url }}#browse/browse:snapshots/"
+        repository_url: "{{ nexus_url }}/repository/snapshots/"
         dest: "{{ springboot_deploy_folder }}"
         extension: "jar"
         state: "present"

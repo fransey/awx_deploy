@@ -22,4 +22,5 @@
 
     - name: "Pre Deployment Checks: Deployment: Backing up {{ artifactid }} systemd script"
       command: cp "{{ sysd_script }}" "{{ sysd_script }}.bak"
+      become: yes
    

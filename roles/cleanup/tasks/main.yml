@@ -11,4 +11,5 @@
         recurse: no
       with_items: "{{ all_objects.files }}"
       when: item.path not in keep_these
+      become: yes
   

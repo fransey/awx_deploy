@@ -1,4 +1,4 @@
-    - name: "Cleanup: Get  item path {{ item.path }} list of all files object files {{ all_objects.files }} in application directory: {{ springboot_deploy_folder }}"
+    - name: "Cleanup: Get list of all files object files in application directory: {{ springboot_deploy_folder }}"
       find:
         path: "{{ springboot_deploy_folder }}"
         recurse: no

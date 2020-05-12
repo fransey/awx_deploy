@@ -1,7 +1,6 @@
 
     all_objects: ""
     keep_these:
-        - "{{ springboot_deploy_folder }}/{{ artifactid }}-{{ version }}.jar"
         - "{{ springboot_deploy_folder }}/{{ artifactid }}-{{ version }}.pom"
         - "{{ springboot_deploy_folder }}/"
         - "{{ springboot_deploy_folder }}/lib/*"

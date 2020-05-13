@@ -1,4 +1,4 @@
-- name: "Java Spring Boot Application Deployment"
+- name:  "Spring Boot Application Deployment"
   hosts: "{{ deployment_host }}"
   connection: ssh
 

@@ -1,7 +1,7 @@
     - name: "Retrieve artifact and deploy application in application directory"
       maven_artifact:
+        group_id: "{{ groupid }}"
         artifact_id: "{{ artifactid }}"
-        group_id: "{{ group_id }}"
         version: "{{ version }}"
         dest: "{{ springboot_deploy_folder }}"
         repository_url: "{{ nexus_url }}/repository/snapshots/"

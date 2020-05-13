@@ -3,7 +3,7 @@
         path: "{{ springboot_deploy_folder }}"
       register: file_details
       
-      //create application directory if direcory is not present
+      #create application directory if direcory is not present
     - name: "Create application directory"
       file:
         path: "{{ springboot_deploy_folder }}"

@@ -7,5 +7,6 @@
         repository_url: "{{ nexus_url }}/repository/snapshots/"
         state: "present"
         mode: 0644
+        verify_checksum: always
         owner: "{{ ansible_user_id }}"
       become: yes

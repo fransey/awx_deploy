@@ -1,0 +1,15 @@
+    - name: "Check if application directory is present"
+      stat:
+        path: "{{ springboot_deploy_folder }}"
+      register: file_details
+      
+      //create application directory if direcory is not present
+    - name: "Create application directory"
+      file:
+        path: "{{ springboot_deploy_folder }}"
+        state: directory
+        mode: 0755
+        owner: "{{ springboot_user }}"
+        group: "{{ springboot_group }}"
+      when: file_details.stat.exists == false
+      become: yes

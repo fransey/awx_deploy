@@ -1,0 +1,16 @@
+    - name: "Create systemd service file"
+      template:
+        src: app.service.j2
+        dest: "{{ sysd_script }}"
+        mode: 0644
+        owner: "{{ springboot_user }}"
+        group: "{{ springboot_group }}"
+      become: yes
+
+    - name: "Restart application service"
+      systemd:
+        name: "{{ artifactid }}"
+        state: restarted
+        daemon-reload: yes
+        enabled: yes
+      become: yes

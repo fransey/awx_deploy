@@ -2,6 +2,7 @@
       maven_artifact:
         artifact_id: "{{ artifactid }}"
         group_id: "{{ group_id }}"
+        version: "{{ version }}"
         dest: "{{ springboot_deploy_folder }}"
         repository_url: "{{ nexus_url }}/repository/snapshots/"
         state: "present"

@@ -1,15 +1,15 @@
-    - name: "Cleanup: Get list of all files object files in application directory: {{ springboot_deploy_folder }}"
+    - name: "Cleanup"
       find:
         path: "{{ springboot_deploy_folder }}"
         recurse: no
       register: all_objects
       
-    - name: "Cleanup: Clean application directory: {{ springboot_deploy_folder }}"
+    - name: "Cleanup: Clean application directory"
       file:
         path: "{{ item.path }}"
         state: absent
         recurse: no
       with_items: "{{ all_objects.files }}"
-      when: item.path not in keep_these
+      when: item.path not in filestokeep
       become: yes
   
